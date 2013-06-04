@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar target/GameServer-0.0.1-SNAPSHOT.jar com.kixeye.server.Server
+java -jar target/AsyncTcpServer-0.0.1-SNAPSHOT.jar com.potatosoft.server.Server

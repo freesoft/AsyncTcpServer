@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.kixeye</groupId>
-	<artifactId>GameServer</artifactId>
+	<groupId>com.potatosoft</groupId>
+	<artifactId>AsyncTcpServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Kixeye GameServer</name>
-	<description>This is game server source code</description>
+	<name>AsyncTcpServer</name>
+	<description>This is test project to test Java7 async socket.</description>
 
 	<properties>
 		<jdk.version>1.7</jdk.version>
@@ -42,7 +42,7 @@
 							<appendAssemblyId>false</appendAssemblyId>
 							<archive>
 								<manifest>
-									<mainClass>com.kixeye.server.Server</mainClass>
+									<mainClass>com.potatosoft.server.Server</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -61,7 +61,7 @@
 							<appendAssemblyId>false</appendAssemblyId>
 							<archive>
 								<manifest>
-									<mainClass>com.kixeye.client.ClientForTest</mainClass>
+									<mainClass>com.potatosoft.client.ClientForTest</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
