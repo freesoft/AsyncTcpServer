@@ -5,8 +5,14 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.AsynchronousSocketChannel;
+import java.nio.channels.CompletionHandler;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 
@@ -30,6 +36,10 @@ public class Server
     
 	private static final Server server = new Server();
 	
+	final static Logger logger = LoggerFactory.getLogger(Server.class);
+	
+	private CompletionHandler<Integer, ByteBuffer> readCompletionHandler;
+	
 	private Server(){
 		
 	}
@@ -52,8 +62,7 @@ public class Server
                 
                 while (true)
                 {
-                    Future<AsynchronousSocketChannel> asyncSocketChannelFuture =
-                        asynServerSocketChannel.accept();
+                    Future<AsynchronousSocketChannel> asyncSocketChannelFuture = asynServerSocketChannel.accept();
                     
                     try (AsynchronousSocketChannel asyncSocketChannel = asyncSocketChannelFuture.get())
                     {
@@ -75,12 +84,12 @@ public class Server
                     catch (IOException | ExecutionException | InterruptedException ex)
                     {
                         System.err.println(ex);
-                    }
+                    } 
                 }
             }
             else
             {
-                System.err.println("Can't open async server socket channel.");
+                logger.info("Can't open async server socket channel.");
             }
         }
         catch (IOException ex)
@@ -88,10 +97,27 @@ public class Server
             System.err.println(ex);
         }
     }
+	
+	public CompletionHandler<Integer, ByteBuffer> getReadCompletionHandler() {
+		return readCompletionHandler;
+	}
+
+	public void setReadCompletionHandler(CompletionHandler<Integer, ByteBuffer> readCompletionHandler) {
+		this.readCompletionHandler = readCompletionHandler;
+	}
+	
+	
     
     public static void main(String[] args) throws IOException
     {
+    	ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applications.xml"});
+    	CompletionHandler<Integer, ByteBuffer> readHandler = context.getBean("readHandler", ReadCompletionHandler.class);
+    	
     	Server server = Server.getInstance();
+    	server.setReadCompletionHandler(readHandler);
     	server.run();
     }
+
+
+
 }

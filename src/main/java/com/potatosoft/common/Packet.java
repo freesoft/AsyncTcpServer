@@ -12,6 +12,8 @@ import java.nio.charset.Charset;
  */
 public class Packet implements BynaryFormatConvertable {
 	
+	private static final int INTERNAL_BUFFER_SIZE = 1024;
+	
 	private byte version;
 	private short messageType;
 	private int userId;
@@ -37,17 +39,12 @@ public class Packet implements BynaryFormatConvertable {
 	 * @param buffer
 	 */
 	public Packet(ByteBuffer buffer){
-		
 		version = buffer.get();
 		messageType = buffer.getShort();
 		userId = buffer.getInt();
-		
 		final int sizeOfPayload = buffer.remaining();
-		
 		byte[] temp = new byte[sizeOfPayload];
-		
 		buffer.get(temp);
-		
 		payload = new String(temp, Charset.forName("UTF-8"));  
 	}
 	
@@ -82,7 +79,7 @@ public class Packet implements BynaryFormatConvertable {
 	 * @return ByteBuffer which includes byte content of this 
 	 */
 	public ByteBuffer toByteBuffer(){
-		ByteBuffer buffer = ByteBuffer.allocate(1024);
+		ByteBuffer buffer = ByteBuffer.allocate(INTERNAL_BUFFER_SIZE);
 		buffer.put(this.version);
 		buffer.putShort(this.messageType);
 		buffer.putInt(this.userId);
