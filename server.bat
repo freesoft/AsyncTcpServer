@@ -1,1 +1,1 @@
-java -jar target/AsyncTcpServer-0.0.1-SNAPSHOT.jar com.potatosft.server.Server
+java -jar target/AsyncTcpServer-0.0.1-SNAPSHOT.jar
