@@ -11,8 +11,9 @@ import java.util.concurrent.Future;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -24,10 +25,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * TODO Add heart beat check if connection requires keep-alive communication between server and client 
 
  */
+@Component
 public class Server
 {
     final static String SERVER_IP = "localhost";
-    final static int SERVER_PORT = 5000;
+    
+    @Value("${server.port}")
+    private int port;
     
     final static int BUFFER_SIZE = 1024;
     final static long THREAD_SLEEP_MILLISECONDS = 100L;
@@ -38,6 +42,7 @@ public class Server
 	
 	final static Logger logger = LoggerFactory.getLogger(Server.class);
 	
+	@Autowired
 	private CompletionHandler<Integer, ByteBuffer> readCompletionHandler;
 	
 	private Server(){
@@ -56,7 +61,7 @@ public class Server
         	
             if (asynServerSocketChannel.isOpen())
             {
-                asynServerSocketChannel.bind(new InetSocketAddress(SERVER_IP, SERVER_PORT));
+                asynServerSocketChannel.bind(new InetSocketAddress(SERVER_IP, port));
  
                 System.out.println("Waiting client connection...");
                 
@@ -105,19 +110,5 @@ public class Server
 	public void setReadCompletionHandler(CompletionHandler<Integer, ByteBuffer> readCompletionHandler) {
 		this.readCompletionHandler = readCompletionHandler;
 	}
-	
-	
-    
-    public static void main(String[] args) throws IOException
-    {
-    	ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applications.xml"});
-    	CompletionHandler<Integer, ByteBuffer> readHandler = context.getBean("readHandler", ReadCompletionHandler.class);
-    	
-    	Server server = Server.getInstance();
-    	server.setReadCompletionHandler(readHandler);
-    	server.run();
-    }
-
-
 
 }

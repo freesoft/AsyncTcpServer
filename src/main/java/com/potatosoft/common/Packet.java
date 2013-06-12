@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
  * @author wonhee.jung
  *
  */
-public class Packet implements BynaryFormatConvertable {
+public class Packet implements BinaryFormatConvertable {
 	
 	private static final int INTERNAL_BUFFER_SIZE = 1024;
 	

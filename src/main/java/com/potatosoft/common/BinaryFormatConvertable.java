@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
  * @author wonhee.jung
  *
  */
-public interface BynaryFormatConvertable {
+public interface BinaryFormatConvertable {
 
 	public ByteBuffer toByteBuffer();
 	

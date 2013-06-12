@@ -3,6 +3,8 @@ package com.potatosoft.server;
 import java.nio.ByteBuffer;
 import java.nio.channels.CompletionHandler;
 
+import org.springframework.stereotype.Component;
+
 import com.potatosoft.common.Packet;
 
 /**
@@ -11,6 +13,7 @@ import com.potatosoft.common.Packet;
  * @author wonhee.jung
  *
  */
+@Component
 public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuffer> {
 
 	public void completed(Integer result, ByteBuffer buffer) {
