@@ -5,6 +5,8 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import com.potatosoft.common.Packet;
  
 /**
@@ -15,8 +17,9 @@ import com.potatosoft.common.Packet;
  */
 public class ClientForTest implements Runnable {
 	
-	final static int PORT = 5000;
-	final static String SERVER_HOSTNAME = "localhost";
+	@Value("${server.listen.port}")
+	private int port;
+	private final static String SERVER_HOSTNAME = "localhost";
 	
 	private Packet packet;
 	
@@ -44,7 +47,7 @@ public class ClientForTest implements Runnable {
     	SocketChannel channel = SocketChannel.open();
  
         channel.configureBlocking(false); // non-blocking mode on
-        channel.connect(new InetSocketAddress(SERVER_HOSTNAME, PORT));
+        channel.connect(new InetSocketAddress(SERVER_HOSTNAME, port));
  
         while (!channel.finishConnect()) {
             // System.out.println("still connecting");

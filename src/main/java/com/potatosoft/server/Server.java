@@ -28,9 +28,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Server
 {
-    final static String SERVER_IP = "localhost";
+	@Value("${sever.binding.ip}")
+    private String serverBindingIp;
     
-    @Value("${server.port}")
+    @Value("${server.listen.port}")
     private int port;
     
     final static int BUFFER_SIZE = 1024;
@@ -61,7 +62,7 @@ public class Server
         	
             if (asynServerSocketChannel.isOpen())
             {
-                asynServerSocketChannel.bind(new InetSocketAddress(SERVER_IP, port));
+                asynServerSocketChannel.bind(new InetSocketAddress(serverBindingIp, port));
  
                 System.out.println("Waiting client connection...");
                 
