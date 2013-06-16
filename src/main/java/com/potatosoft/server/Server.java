@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Server
 {
-	@Value("${sever.binding.ip}")
+	@Value("${server.binding.ip}")
     private String serverBindingIp;
     
     @Value("${server.listen.port}")
@@ -37,7 +37,8 @@ public class Server
     final static int BUFFER_SIZE = 1024;
     final static long THREAD_SLEEP_MILLISECONDS = 100L;
     
-    final static String ENCODING_CHARSET = "UTF-8";
+    @Value("${charset.encoding}")
+    private String charsetEncoding = "UTF-8";
     
 	private static final Server server = new Server();
 	

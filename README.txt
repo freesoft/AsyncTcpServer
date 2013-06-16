@@ -18,4 +18,8 @@ How to run
 * To run JUnit test, do it either in Eclipse or  
       mvn test
       
-      
+ 
+ Protobuf compile
+ 
+ * This project use Google's Protobuf as message protocol between server and client. 
+ You need to run protobuf.sh or protobuf.bat every time you change packet.proto definition.

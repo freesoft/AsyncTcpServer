@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package com.potatosoft.protobuf;
+
+option java_package = "com.potatosoft.protobuf";
+option java_outer_classname = "PacketProtos";
+
+message Packet {
+
+	/*
+	 * Define version and messageType as int32, it was originally byte and short.
+	 * It is a 'variant' type variable that will change size depending on the data that is stored in it.
+	 */
+	required int32 version = 1;
+	required MessageType messageType = 2;
+	required int32 userId = 3;
+	required string payload = 4;
+
+	// enum values use variant encoding on the wire, so negative values are not inefficient
+	// and not recommended.
+	// Also, value should be in the range of a 32-bit integer.
+	// https://developers.google.com/protocol-buffers/docs/proto
+	// Add any enum type you want to use.
+	enum MessageType {
+		LOGIN = 0;
+		LOGOUT = 1;
+		GAMEPLAY = 2;
+		CHAT = 3;
+		PURCHASE = 4;
+	}
+}

@@ -5,7 +5,9 @@ import java.nio.channels.CompletionHandler;
 
 import org.springframework.stereotype.Component;
 
-import com.potatosoft.common.Packet;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.potatosoft.protobuf.PacketProtos.Packet;
+
 
 /**
  * Handles read byte.
@@ -19,7 +21,15 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
 	public void completed(Integer result, ByteBuffer buffer) {
         buffer.flip();
         System.out.println("bytes in the buffer are : " + buffer.remaining());
-        Packet packet = new Packet(buffer);
+        Packet packet = null;
+        byte[] dst = null;
+		try {
+			dst = new byte[buffer.remaining()];
+			buffer.get(dst);
+			packet = Packet.parseFrom(dst);
+		} catch (InvalidProtocolBufferException e) {
+			e.printStackTrace();
+		}
         System.out.println("From Client[from Packet class] [" + packet.toString() + "]");
 	}
 

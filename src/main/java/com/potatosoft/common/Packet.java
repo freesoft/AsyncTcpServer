@@ -12,6 +12,7 @@ import java.nio.charset.Charset;
  */
 public class Packet implements BinaryFormatConvertable {
 	
+	/* This size need to be adjusted properly depends on payload size */
 	private static final int INTERNAL_BUFFER_SIZE = 1024;
 	
 	private byte version;
@@ -23,7 +24,7 @@ public class Packet implements BinaryFormatConvertable {
 	 * default constructor
 	 */
 	public Packet(){
-		
+
 	}
 	
 	public Packet(byte version, short messageType, int userId, String payload){

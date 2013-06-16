@@ -7,7 +7,8 @@ import java.nio.channels.SocketChannel;
 
 import org.springframework.beans.factory.annotation.Value;
 
-import com.potatosoft.common.Packet;
+import com.potatosoft.protobuf.PacketProtos.Packet;
+import com.potatosoft.protobuf.PacketProtos.Packet.MessageType;
  
 /**
  * Ugly TCP client test code for testing.
@@ -17,15 +18,13 @@ import com.potatosoft.common.Packet;
  */
 public class ClientForTest implements Runnable {
 	
-	@Value("${server.listen.port}")
-	private int port;
+	private final static int PORT = 5000;
 	private final static String SERVER_HOSTNAME = "localhost";
 	
 	private Packet packet;
 	
-	
 	public ClientForTest(){
-		
+				
 	}
 	
 	public ClientForTest(Packet packet){
@@ -47,21 +46,23 @@ public class ClientForTest implements Runnable {
     	SocketChannel channel = SocketChannel.open();
  
         channel.configureBlocking(false); // non-blocking mode on
-        channel.connect(new InetSocketAddress(SERVER_HOSTNAME, port));
+        System.out.println("Connecting to " + SERVER_HOSTNAME + "(" + PORT + ")");
+        channel.connect(new InetSocketAddress(SERVER_HOSTNAME, PORT));
  
         while (!channel.finishConnect()) {
             // System.out.println("still connecting");
         }
         
         // Send given packet bytes to server side.
-        ByteBuffer buffer = this.packet.toByteBuffer();
+        //ByteBuffer buffer = ByteBuffer.this.packet.toByteArray());
+        ByteBuffer buffer = ByteBuffer.wrap(this.packet.toByteArray());
         
         int bytesWritten = 0;
         while (buffer.hasRemaining()) {
         	bytesWritten += channel.write(buffer);
         }
         // for debugging
-        System.out.println("bytes written:" + bytesWritten + ", actual in the Packet : " + this.packet.toByteBuffer().remaining());
+        System.out.println("bytes written:" + bytesWritten + ", actual in the Packet : " + this.packet.getSerializedSize());
 	}
 	
 	public void run() {
@@ -79,9 +80,30 @@ public class ClientForTest implements Runnable {
      
     public static void main(String[] args){
     	
-    	Packet packet1 = new Packet((byte)1, (short)1, 123, "Payload in packet1");
-    	Packet packet2 = new Packet((byte)1, (short)1, 456, "Payload in packet2");
-    	Packet packet3 = new Packet((byte)1, (short)1, 789, "Payload in packet3");
+    	Packet packet1 = 
+			    	Packet.newBuilder()
+					.setVersion(1)
+					.setMessageType(MessageType.LOGIN)
+					.setUserId(123)
+					.setPayload("Payload in packet1")
+					.build();
+			    	
+    	Packet packet2 = 
+		    	Packet.newBuilder()
+				.setVersion(1)
+				.setMessageType(MessageType.LOGIN)
+				.setUserId(456)
+				.setPayload("Payload in packet2")
+				.build();
+    	
+    	Packet packet3 = 
+		    	Packet.newBuilder()
+				.setVersion(1)
+				.setMessageType(MessageType.LOGIN)
+				.setUserId(789)
+				.setPayload("Payload in packet3")
+				.build();
+    	
     	
     	ClientForTest client1 = new ClientForTest(packet1);
     	ClientForTest client2 = new ClientForTest(packet2);
