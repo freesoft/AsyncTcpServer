@@ -6,7 +6,8 @@ Requirement
 * Java should be in PATH the environment variable to make execution script runnable.
 * To build project from source code, it requires Maven to be installed. ( Project also includes .project and .classpath for Eclipse Juno)
 * Server and Client should located in the same server for client testing since client will try to connecdt "localhost".
-* Network connection may need to be allowed to rebuild project with Maven due to library repository access.    
+* Network connection may need to be allowed to rebuild project with Maven due to library repository access.
+* Google Protobuf compiler need to be installed.     
 
 
 How to run
@@ -19,7 +20,8 @@ How to run
       mvn test
       
  
- Protobuf compile
+Google Protobuf compile
  
  * This project use Google's Protobuf as message protocol between server and client. 
- You need to run protobuf.sh or protobuf.bat every time you change packet.proto definition.
+ You need to run protobuf.sh ( in Unix or OS X or change it properly for your OS ) every time you change packet.proto definition.
+ If your client codebase is C++ or Python, generate new client side Packet code with com/potatosoft/protobuf/packet.proto file.
