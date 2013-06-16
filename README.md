@@ -1,6 +1,13 @@
-This project is written by Wonhee jung to practice Java7 async socket.
+This project was originally coded to practice Java7 asynchronous socket as well as some code challenge,
+but now I'm changing it to be more Java based game server.
 
-Requirement
+So far, this project just has basic structure as Maven/Spring framework/Google Protobuf project.
+
+== Author
+
+* Wonhee Jung
+
+== Requirement
 
 * Need JDK 1.7+ to be installed in the PC.
 * Java should be in PATH the environment variable to make execution script runnable.
@@ -10,7 +17,7 @@ Requirement
 * Google Protobuf compiler need to be installed.     
 
 
-How to run
+== How to run
 
 * Run server.bat in MS Window ( or server.sh in Linux, didn't test it. Requires bash. Please grant execution permission. ) for server side first.
 * Run client.bat in MS Window ( or client.bat in Linux, didn't test it. Requires bash Please grant execution permission. ) for client side after server start up. ( This is written just for test purpose ).
@@ -20,7 +27,7 @@ How to run
       mvn test
       
  
-Google Protobuf compile
+== Google Protobuf compile
  
  * This project use Google's Protobuf as message protocol between server and client. 
  You need to run protobuf.sh ( in Unix or OS X or change it properly for your OS ) every time you change packet.proto definition.

@@ -4,3 +4,4 @@ target
 .project
 bin
 .settings
+.DS_Store
