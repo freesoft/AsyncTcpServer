@@ -5,11 +5,13 @@ import java.nio.charset.Charset;
 
 /**
  * Class to define network packet.
- * 
+ * This class shouldn't be used anymore since I changed packet definition to use
+ * Google's Protobuf instead of those manual implementation.
+ * This class is still remained just for reference and will be removed from project soon.
  * 
  * @author wonhee.jung
- *
  */
+@Deprecated
 public class Packet implements BinaryFormatConvertable {
 	
 	/* This size need to be adjusted properly depends on payload size */

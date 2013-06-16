@@ -15,12 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.potatosoft.protobuf.PacketProtos.ResponsePacket;
+import com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result;
+
 /**
  * 
  * @author wonhee.jung
  *
- * TODO Change logger to use logback or log4j instead of System.out.println
- * TODO Move some variables to external properties file and inject it into source code. ( with Spring framework )
  * TODO More load-test
  * TODO Add heart beat check if connection requires keep-alive communication between server and client 
 
@@ -65,7 +66,7 @@ public class Server
             {
                 asynServerSocketChannel.bind(new InetSocketAddress(serverBindingIp, port));
  
-                System.out.println("Waiting client connection...");
+                logger.debug("Waiting client connection...");
                 
                 while (true)
                 {
@@ -73,7 +74,7 @@ public class Server
                     
                     try (AsynchronousSocketChannel asyncSocketChannel = asyncSocketChannelFuture.get())
                     {
-                        System.out.println("Client connected from : " + asyncSocketChannel.getRemoteAddress());
+                        logger.debug("Client connected from : {}", asyncSocketChannel.getRemoteAddress());
                         ByteBuffer incomingBuffer = ByteBuffer.allocateDirect(BUFFER_SIZE);
 
                         // Read bytes from client side
@@ -83,10 +84,18 @@ public class Server
                             Thread.sleep(THREAD_SLEEP_MILLISECONDS);
                         }
                         catch(Exception e){}
+                        
+                        // add logic at here whatever you want with received message
+                        // and make response message
+                        
+                        // default response
+                        ResponsePacket response = ResponsePacket.newBuilder()
+                        						.setResult(Result.SUCCESS)
+                        						.setPayload("Hello World")
+                        						.build();
                          
-                        // Add extra code at here if server side need to to write packets to client side like ACK packet or response message.
-                        // ByteBuffer outBuffer = ByteBuffer.wrap("Hello, World".getBytes(Charset.forName(ENCODING_CHARSET)););
-                        // asyncSocketChannel.write(outgoingBuffer).get();
+                        ByteBuffer outgoingBuffer = ByteBuffer.wrap(response.toByteArray());
+                        Integer result = asyncSocketChannel.write(outgoingBuffer).get();
                     }
                     catch (IOException | ExecutionException | InterruptedException ex)
                     {

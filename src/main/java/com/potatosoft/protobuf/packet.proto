@@ -1,11 +1,17 @@
-syntax = "proto2";
+/*
+ * This file includes every Protobuf definition.
+ * TODO This file need to be moved somewhere outside of Java source code directory
+ * and documented properly since other client implementation ( C/C++/Python? ) also
+ * need this definition.
+ */ syntax = "proto2";
 
 package com.potatosoft.protobuf;
 
 option java_package = "com.potatosoft.protobuf";
 option java_outer_classname = "PacketProtos";
 
-message Packet {
+// request packet definition
+message RequestPacket {
 
 	/*
 	 * Define version and messageType as int32, it was originally byte and short.
@@ -28,4 +34,23 @@ message Packet {
 		CHAT = 3;
 		PURCHASE = 4;
 	}
+
+}
+
+// Response packet definition
+message ResponsePacket {
+
+	// should be either success or failure
+	required Result result = 1;
+	// you can specify error code when result has Result.FAILURE
+	optional int32 errorCode = 2;
+
+	// you can put any string or server side response in payload
+	required string payload = 3;
+
+	enum Result {
+		SUCCESS = 0;
+		FAILURE = 1;
+	}
+
 }

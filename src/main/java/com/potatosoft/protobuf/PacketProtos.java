@@ -8,7 +8,7 @@ public final class PacketProtos {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface PacketOrBuilder
+  public interface RequestPacketOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required int32 version = 1;
@@ -33,15 +33,15 @@ public final class PacketProtos {
      */
     int getVersion();
 
-    // required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;
+    // required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;
     /**
-     * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+     * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
      */
     boolean hasMessageType();
     /**
-     * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+     * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
      */
-    com.potatosoft.protobuf.PacketProtos.Packet.MessageType getMessageType();
+    com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType getMessageType();
 
     // required int32 userId = 3;
     /**
@@ -69,24 +69,28 @@ public final class PacketProtos {
         getPayloadBytes();
   }
   /**
-   * Protobuf type {@code com.potatosoft.protobuf.Packet}
+   * Protobuf type {@code com.potatosoft.protobuf.RequestPacket}
+   *
+   * <pre>
+   * request packet definition
+   * </pre>
    */
-  public static final class Packet extends
+  public static final class RequestPacket extends
       com.google.protobuf.GeneratedMessage
-      implements PacketOrBuilder {
-    // Use Packet.newBuilder() to construct.
-    private Packet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements RequestPacketOrBuilder {
+    // Use RequestPacket.newBuilder() to construct.
+    private RequestPacket(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Packet(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private RequestPacket(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Packet defaultInstance;
-    public static Packet getDefaultInstance() {
+    private static final RequestPacket defaultInstance;
+    public static RequestPacket getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Packet getDefaultInstanceForType() {
+    public RequestPacket getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -96,7 +100,7 @@ public final class PacketProtos {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Packet(
+    private RequestPacket(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -126,7 +130,7 @@ public final class PacketProtos {
             }
             case 16: {
               int rawValue = input.readEnum();
-              com.potatosoft.protobuf.PacketProtos.Packet.MessageType value = com.potatosoft.protobuf.PacketProtos.Packet.MessageType.valueOf(rawValue);
+              com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType value = com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
               } else {
@@ -159,33 +163,33 @@ public final class PacketProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_Packet_descriptor;
+      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_RequestPacket_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_Packet_fieldAccessorTable
+      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_RequestPacket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.potatosoft.protobuf.PacketProtos.Packet.class, com.potatosoft.protobuf.PacketProtos.Packet.Builder.class);
+              com.potatosoft.protobuf.PacketProtos.RequestPacket.class, com.potatosoft.protobuf.PacketProtos.RequestPacket.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<Packet> PARSER =
-        new com.google.protobuf.AbstractParser<Packet>() {
-      public Packet parsePartialFrom(
+    public static com.google.protobuf.Parser<RequestPacket> PARSER =
+        new com.google.protobuf.AbstractParser<RequestPacket>() {
+      public RequestPacket parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Packet(input, extensionRegistry);
+        return new RequestPacket(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Packet> getParserForType() {
+    public com.google.protobuf.Parser<RequestPacket> getParserForType() {
       return PARSER;
     }
 
     /**
-     * Protobuf enum {@code com.potatosoft.protobuf.Packet.MessageType}
+     * Protobuf enum {@code com.potatosoft.protobuf.RequestPacket.MessageType}
      *
      * <pre>
      * enum values use variant encoding on the wire, so negative values are not inefficient
@@ -276,7 +280,7 @@ public final class PacketProtos {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.potatosoft.protobuf.PacketProtos.Packet.getDescriptor().getEnumTypes().get(0);
+        return com.potatosoft.protobuf.PacketProtos.RequestPacket.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final MessageType[] VALUES = values();
@@ -298,7 +302,7 @@ public final class PacketProtos {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:com.potatosoft.protobuf.Packet.MessageType)
+      // @@protoc_insertion_point(enum_scope:com.potatosoft.protobuf.RequestPacket.MessageType)
     }
 
     private int bitField0_;
@@ -330,19 +334,19 @@ public final class PacketProtos {
       return version_;
     }
 
-    // required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;
+    // required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;
     public static final int MESSAGETYPE_FIELD_NUMBER = 2;
-    private com.potatosoft.protobuf.PacketProtos.Packet.MessageType messageType_;
+    private com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType messageType_;
     /**
-     * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+     * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
      */
     public boolean hasMessageType() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+     * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
      */
-    public com.potatosoft.protobuf.PacketProtos.Packet.MessageType getMessageType() {
+    public com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType getMessageType() {
       return messageType_;
     }
 
@@ -407,7 +411,7 @@ public final class PacketProtos {
 
     private void initFields() {
       version_ = 0;
-      messageType_ = com.potatosoft.protobuf.PacketProtos.Packet.MessageType.LOGIN;
+      messageType_ = com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType.LOGIN;
       userId_ = 0;
       payload_ = "";
     }
@@ -488,53 +492,53 @@ public final class PacketProtos {
       return super.writeReplace();
     }
 
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(byte[] data)
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(java.io.InputStream input)
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseDelimitedFrom(java.io.InputStream input)
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseDelimitedFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.potatosoft.protobuf.PacketProtos.Packet parseFrom(
+    public static com.potatosoft.protobuf.PacketProtos.RequestPacket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -543,7 +547,7 @@ public final class PacketProtos {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.potatosoft.protobuf.PacketProtos.Packet prototype) {
+    public static Builder newBuilder(com.potatosoft.protobuf.PacketProtos.RequestPacket prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -555,24 +559,28 @@ public final class PacketProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code com.potatosoft.protobuf.Packet}
+     * Protobuf type {@code com.potatosoft.protobuf.RequestPacket}
+     *
+     * <pre>
+     * request packet definition
+     * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.potatosoft.protobuf.PacketProtos.PacketOrBuilder {
+       implements com.potatosoft.protobuf.PacketProtos.RequestPacketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_Packet_descriptor;
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_RequestPacket_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_Packet_fieldAccessorTable
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_RequestPacket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.potatosoft.protobuf.PacketProtos.Packet.class, com.potatosoft.protobuf.PacketProtos.Packet.Builder.class);
+                com.potatosoft.protobuf.PacketProtos.RequestPacket.class, com.potatosoft.protobuf.PacketProtos.RequestPacket.Builder.class);
       }
 
-      // Construct using com.potatosoft.protobuf.PacketProtos.Packet.newBuilder()
+      // Construct using com.potatosoft.protobuf.PacketProtos.RequestPacket.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -594,7 +602,7 @@ public final class PacketProtos {
         super.clear();
         version_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        messageType_ = com.potatosoft.protobuf.PacketProtos.Packet.MessageType.LOGIN;
+        messageType_ = com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType.LOGIN;
         bitField0_ = (bitField0_ & ~0x00000002);
         userId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -609,23 +617,23 @@ public final class PacketProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_Packet_descriptor;
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_RequestPacket_descriptor;
       }
 
-      public com.potatosoft.protobuf.PacketProtos.Packet getDefaultInstanceForType() {
-        return com.potatosoft.protobuf.PacketProtos.Packet.getDefaultInstance();
+      public com.potatosoft.protobuf.PacketProtos.RequestPacket getDefaultInstanceForType() {
+        return com.potatosoft.protobuf.PacketProtos.RequestPacket.getDefaultInstance();
       }
 
-      public com.potatosoft.protobuf.PacketProtos.Packet build() {
-        com.potatosoft.protobuf.PacketProtos.Packet result = buildPartial();
+      public com.potatosoft.protobuf.PacketProtos.RequestPacket build() {
+        com.potatosoft.protobuf.PacketProtos.RequestPacket result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.potatosoft.protobuf.PacketProtos.Packet buildPartial() {
-        com.potatosoft.protobuf.PacketProtos.Packet result = new com.potatosoft.protobuf.PacketProtos.Packet(this);
+      public com.potatosoft.protobuf.PacketProtos.RequestPacket buildPartial() {
+        com.potatosoft.protobuf.PacketProtos.RequestPacket result = new com.potatosoft.protobuf.PacketProtos.RequestPacket(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -650,16 +658,16 @@ public final class PacketProtos {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.potatosoft.protobuf.PacketProtos.Packet) {
-          return mergeFrom((com.potatosoft.protobuf.PacketProtos.Packet)other);
+        if (other instanceof com.potatosoft.protobuf.PacketProtos.RequestPacket) {
+          return mergeFrom((com.potatosoft.protobuf.PacketProtos.RequestPacket)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.potatosoft.protobuf.PacketProtos.Packet other) {
-        if (other == com.potatosoft.protobuf.PacketProtos.Packet.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.potatosoft.protobuf.PacketProtos.RequestPacket other) {
+        if (other == com.potatosoft.protobuf.PacketProtos.RequestPacket.getDefaultInstance()) return this;
         if (other.hasVersion()) {
           setVersion(other.getVersion());
         }
@@ -702,11 +710,11 @@ public final class PacketProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.potatosoft.protobuf.PacketProtos.Packet parsedMessage = null;
+        com.potatosoft.protobuf.PacketProtos.RequestPacket parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.potatosoft.protobuf.PacketProtos.Packet) e.getUnfinishedMessage();
+          parsedMessage = (com.potatosoft.protobuf.PacketProtos.RequestPacket) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -774,24 +782,24 @@ public final class PacketProtos {
         return this;
       }
 
-      // required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;
-      private com.potatosoft.protobuf.PacketProtos.Packet.MessageType messageType_ = com.potatosoft.protobuf.PacketProtos.Packet.MessageType.LOGIN;
+      // required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;
+      private com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType messageType_ = com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType.LOGIN;
       /**
-       * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+       * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
        */
       public boolean hasMessageType() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+       * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
        */
-      public com.potatosoft.protobuf.PacketProtos.Packet.MessageType getMessageType() {
+      public com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType getMessageType() {
         return messageType_;
       }
       /**
-       * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+       * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
        */
-      public Builder setMessageType(com.potatosoft.protobuf.PacketProtos.Packet.MessageType value) {
+      public Builder setMessageType(com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -801,11 +809,11 @@ public final class PacketProtos {
         return this;
       }
       /**
-       * <code>required .com.potatosoft.protobuf.Packet.MessageType messageType = 2;</code>
+       * <code>required .com.potatosoft.protobuf.RequestPacket.MessageType messageType = 2;</code>
        */
       public Builder clearMessageType() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        messageType_ = com.potatosoft.protobuf.PacketProtos.Packet.MessageType.LOGIN;
+        messageType_ = com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType.LOGIN;
         onChanged();
         return this;
       }
@@ -917,22 +925,887 @@ public final class PacketProtos {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.potatosoft.protobuf.Packet)
+      // @@protoc_insertion_point(builder_scope:com.potatosoft.protobuf.RequestPacket)
     }
 
     static {
-      defaultInstance = new Packet(true);
+      defaultInstance = new RequestPacket(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.potatosoft.protobuf.Packet)
+    // @@protoc_insertion_point(class_scope:com.potatosoft.protobuf.RequestPacket)
+  }
+
+  public interface ResponsePacketOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;
+    /**
+     * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+     *
+     * <pre>
+     * should be either success or failure
+     * </pre>
+     */
+    boolean hasResult();
+    /**
+     * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+     *
+     * <pre>
+     * should be either success or failure
+     * </pre>
+     */
+    com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result getResult();
+
+    // optional int32 errorCode = 2;
+    /**
+     * <code>optional int32 errorCode = 2;</code>
+     *
+     * <pre>
+     * you can specify error code when result has Result.FAILURE
+     * </pre>
+     */
+    boolean hasErrorCode();
+    /**
+     * <code>optional int32 errorCode = 2;</code>
+     *
+     * <pre>
+     * you can specify error code when result has Result.FAILURE
+     * </pre>
+     */
+    int getErrorCode();
+
+    // required string payload = 3;
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    boolean hasPayload();
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    java.lang.String getPayload();
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPayloadBytes();
+  }
+  /**
+   * Protobuf type {@code com.potatosoft.protobuf.ResponsePacket}
+   *
+   * <pre>
+   * Response packet definition
+   * </pre>
+   */
+  public static final class ResponsePacket extends
+      com.google.protobuf.GeneratedMessage
+      implements ResponsePacketOrBuilder {
+    // Use ResponsePacket.newBuilder() to construct.
+    private ResponsePacket(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ResponsePacket(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ResponsePacket defaultInstance;
+    public static ResponsePacket getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ResponsePacket getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponsePacket(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result value = com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                result_ = value;
+              }
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              errorCode_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              payload_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_ResponsePacket_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.potatosoft.protobuf.PacketProtos.ResponsePacket.class, com.potatosoft.protobuf.PacketProtos.ResponsePacket.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ResponsePacket> PARSER =
+        new com.google.protobuf.AbstractParser<ResponsePacket>() {
+      public ResponsePacket parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponsePacket(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponsePacket> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code com.potatosoft.protobuf.ResponsePacket.Result}
+     */
+    public enum Result
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SUCCESS = 0;</code>
+       */
+      SUCCESS(0, 0),
+      /**
+       * <code>FAILURE = 1;</code>
+       */
+      FAILURE(1, 1),
+      ;
+
+      /**
+       * <code>SUCCESS = 0;</code>
+       */
+      public static final int SUCCESS_VALUE = 0;
+      /**
+       * <code>FAILURE = 1;</code>
+       */
+      public static final int FAILURE_VALUE = 1;
+
+
+      public final int getNumber() { return value; }
+
+      public static Result valueOf(int value) {
+        switch (value) {
+          case 0: return SUCCESS;
+          case 1: return FAILURE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Result>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<Result>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Result>() {
+              public Result findValueByNumber(int number) {
+                return Result.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.potatosoft.protobuf.PacketProtos.ResponsePacket.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Result[] VALUES = values();
+
+      public static Result valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private Result(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.potatosoft.protobuf.ResponsePacket.Result)
+    }
+
+    private int bitField0_;
+    // required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result result_;
+    /**
+     * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+     *
+     * <pre>
+     * should be either success or failure
+     * </pre>
+     */
+    public boolean hasResult() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+     *
+     * <pre>
+     * should be either success or failure
+     * </pre>
+     */
+    public com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result getResult() {
+      return result_;
+    }
+
+    // optional int32 errorCode = 2;
+    public static final int ERRORCODE_FIELD_NUMBER = 2;
+    private int errorCode_;
+    /**
+     * <code>optional int32 errorCode = 2;</code>
+     *
+     * <pre>
+     * you can specify error code when result has Result.FAILURE
+     * </pre>
+     */
+    public boolean hasErrorCode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 errorCode = 2;</code>
+     *
+     * <pre>
+     * you can specify error code when result has Result.FAILURE
+     * </pre>
+     */
+    public int getErrorCode() {
+      return errorCode_;
+    }
+
+    // required string payload = 3;
+    public static final int PAYLOAD_FIELD_NUMBER = 3;
+    private java.lang.Object payload_;
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    public boolean hasPayload() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    public java.lang.String getPayload() {
+      java.lang.Object ref = payload_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          payload_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string payload = 3;</code>
+     *
+     * <pre>
+     * you can put any string or server side response in payload
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPayloadBytes() {
+      java.lang.Object ref = payload_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        payload_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      result_ = com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result.SUCCESS;
+      errorCode_ = 0;
+      payload_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasResult()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPayload()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, result_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, errorCode_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getPayloadBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, result_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, errorCode_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getPayloadBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.potatosoft.protobuf.PacketProtos.ResponsePacket parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.potatosoft.protobuf.PacketProtos.ResponsePacket prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.potatosoft.protobuf.ResponsePacket}
+     *
+     * <pre>
+     * Response packet definition
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.potatosoft.protobuf.PacketProtos.ResponsePacketOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_ResponsePacket_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.potatosoft.protobuf.PacketProtos.ResponsePacket.class, com.potatosoft.protobuf.PacketProtos.ResponsePacket.Builder.class);
+      }
+
+      // Construct using com.potatosoft.protobuf.PacketProtos.ResponsePacket.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        result_ = com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result.SUCCESS;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        errorCode_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        payload_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.potatosoft.protobuf.PacketProtos.internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor;
+      }
+
+      public com.potatosoft.protobuf.PacketProtos.ResponsePacket getDefaultInstanceForType() {
+        return com.potatosoft.protobuf.PacketProtos.ResponsePacket.getDefaultInstance();
+      }
+
+      public com.potatosoft.protobuf.PacketProtos.ResponsePacket build() {
+        com.potatosoft.protobuf.PacketProtos.ResponsePacket result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.potatosoft.protobuf.PacketProtos.ResponsePacket buildPartial() {
+        com.potatosoft.protobuf.PacketProtos.ResponsePacket result = new com.potatosoft.protobuf.PacketProtos.ResponsePacket(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.result_ = result_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.errorCode_ = errorCode_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.payload_ = payload_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.potatosoft.protobuf.PacketProtos.ResponsePacket) {
+          return mergeFrom((com.potatosoft.protobuf.PacketProtos.ResponsePacket)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.potatosoft.protobuf.PacketProtos.ResponsePacket other) {
+        if (other == com.potatosoft.protobuf.PacketProtos.ResponsePacket.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          setResult(other.getResult());
+        }
+        if (other.hasErrorCode()) {
+          setErrorCode(other.getErrorCode());
+        }
+        if (other.hasPayload()) {
+          bitField0_ |= 0x00000004;
+          payload_ = other.payload_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResult()) {
+          
+          return false;
+        }
+        if (!hasPayload()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.potatosoft.protobuf.PacketProtos.ResponsePacket parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.potatosoft.protobuf.PacketProtos.ResponsePacket) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;
+      private com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result result_ = com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result.SUCCESS;
+      /**
+       * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+       *
+       * <pre>
+       * should be either success or failure
+       * </pre>
+       */
+      public boolean hasResult() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+       *
+       * <pre>
+       * should be either success or failure
+       * </pre>
+       */
+      public com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result getResult() {
+        return result_;
+      }
+      /**
+       * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+       *
+       * <pre>
+       * should be either success or failure
+       * </pre>
+       */
+      public Builder setResult(com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .com.potatosoft.protobuf.ResponsePacket.Result result = 1;</code>
+       *
+       * <pre>
+       * should be either success or failure
+       * </pre>
+       */
+      public Builder clearResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        result_ = com.potatosoft.protobuf.PacketProtos.ResponsePacket.Result.SUCCESS;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 errorCode = 2;
+      private int errorCode_ ;
+      /**
+       * <code>optional int32 errorCode = 2;</code>
+       *
+       * <pre>
+       * you can specify error code when result has Result.FAILURE
+       * </pre>
+       */
+      public boolean hasErrorCode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 errorCode = 2;</code>
+       *
+       * <pre>
+       * you can specify error code when result has Result.FAILURE
+       * </pre>
+       */
+      public int getErrorCode() {
+        return errorCode_;
+      }
+      /**
+       * <code>optional int32 errorCode = 2;</code>
+       *
+       * <pre>
+       * you can specify error code when result has Result.FAILURE
+       * </pre>
+       */
+      public Builder setErrorCode(int value) {
+        bitField0_ |= 0x00000002;
+        errorCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 errorCode = 2;</code>
+       *
+       * <pre>
+       * you can specify error code when result has Result.FAILURE
+       * </pre>
+       */
+      public Builder clearErrorCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        errorCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required string payload = 3;
+      private java.lang.Object payload_ = "";
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public boolean hasPayload() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public java.lang.String getPayload() {
+        java.lang.Object ref = payload_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          payload_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPayloadBytes() {
+        java.lang.Object ref = payload_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          payload_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public Builder setPayload(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        payload_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public Builder clearPayload() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        payload_ = getDefaultInstance().getPayload();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string payload = 3;</code>
+       *
+       * <pre>
+       * you can put any string or server side response in payload
+       * </pre>
+       */
+      public Builder setPayloadBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        payload_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.potatosoft.protobuf.ResponsePacket)
+    }
+
+    static {
+      defaultInstance = new ResponsePacket(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.potatosoft.protobuf.ResponsePacket)
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_potatosoft_protobuf_Packet_descriptor;
+    internal_static_com_potatosoft_protobuf_RequestPacket_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_potatosoft_protobuf_Packet_fieldAccessorTable;
+      internal_static_com_potatosoft_protobuf_RequestPacket_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_potatosoft_protobuf_ResponsePacket_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -943,26 +1816,36 @@ public final class PacketProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n2src/main/java/com/potatosoft/protobuf/" +
-      "packet.proto\022\027com.potatosoft.protobuf\"\310\001" +
-      "\n\006Packet\022\017\n\007version\030\001 \002(\005\022@\n\013messageType" +
-      "\030\002 \002(\0162+.com.potatosoft.protobuf.Packet." +
-      "MessageType\022\016\n\006userId\030\003 \002(\005\022\017\n\007payload\030\004" +
-      " \002(\t\"J\n\013MessageType\022\t\n\005LOGIN\020\000\022\n\n\006LOGOUT" +
-      "\020\001\022\014\n\010GAMEPLAY\020\002\022\010\n\004CHAT\020\003\022\014\n\010PURCHASE\020\004" +
-      "B\'\n\027com.potatosoft.protobufB\014PacketProto" +
-      "s"
+      "packet.proto\022\027com.potatosoft.protobuf\"\326\001" +
+      "\n\rRequestPacket\022\017\n\007version\030\001 \002(\005\022G\n\013mess" +
+      "ageType\030\002 \002(\01622.com.potatosoft.protobuf." +
+      "RequestPacket.MessageType\022\016\n\006userId\030\003 \002(" +
+      "\005\022\017\n\007payload\030\004 \002(\t\"J\n\013MessageType\022\t\n\005LOG" +
+      "IN\020\000\022\n\n\006LOGOUT\020\001\022\014\n\010GAMEPLAY\020\002\022\010\n\004CHAT\020\003" +
+      "\022\014\n\010PURCHASE\020\004\"\230\001\n\016ResponsePacket\022>\n\006res" +
+      "ult\030\001 \002(\0162..com.potatosoft.protobuf.Resp" +
+      "onsePacket.Result\022\021\n\terrorCode\030\002 \001(\005\022\017\n\007",
+      "payload\030\003 \002(\t\"\"\n\006Result\022\013\n\007SUCCESS\020\000\022\013\n\007" +
+      "FAILURE\020\001B\'\n\027com.potatosoft.protobufB\014Pa" +
+      "cketProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_com_potatosoft_protobuf_Packet_descriptor =
+          internal_static_com_potatosoft_protobuf_RequestPacket_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_com_potatosoft_protobuf_Packet_fieldAccessorTable = new
+          internal_static_com_potatosoft_protobuf_RequestPacket_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_potatosoft_protobuf_Packet_descriptor,
+              internal_static_com_potatosoft_protobuf_RequestPacket_descriptor,
               new java.lang.String[] { "Version", "MessageType", "UserId", "Payload", });
+          internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_com_potatosoft_protobuf_ResponsePacket_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_com_potatosoft_protobuf_ResponsePacket_descriptor,
+              new java.lang.String[] { "Result", "ErrorCode", "Payload", });
           return null;
         }
       };

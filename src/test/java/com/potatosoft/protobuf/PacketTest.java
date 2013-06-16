@@ -6,8 +6,8 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.potatosoft.protobuf.PacketProtos.Packet;
-import com.potatosoft.protobuf.PacketProtos.Packet.MessageType;
+import com.potatosoft.protobuf.PacketProtos.RequestPacket;
+import com.potatosoft.protobuf.PacketProtos.RequestPacket.MessageType;
 
 public class PacketTest {
 
@@ -20,7 +20,7 @@ public class PacketTest {
 		String payload = "Hello World";
 
 		
-		Packet packet = Packet.newBuilder()
+		RequestPacket packet = RequestPacket.newBuilder()
 						.setVersion(version)
 						.setMessageType(messageType)
 						.setUserId(userId)
@@ -35,13 +35,13 @@ public class PacketTest {
 	@Test
 	public void testEquals(){
 
-		Packet packet1 = Packet.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
-		Packet packet2 = Packet.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
+		RequestPacket packet1 = RequestPacket.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
+		RequestPacket packet2 = RequestPacket.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
 		
 		assertTrue(packet1.equals(packet2));
 
-		packet1 = Packet.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
-		packet2 = Packet.newBuilder().setVersion(2).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
+		packet1 = RequestPacket.newBuilder().setVersion(1).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
+		packet2 = RequestPacket.newBuilder().setVersion(2).setMessageType(MessageType.LOGIN).setUserId(1000).setPayload("123").build();
 		
 		assertFalse(packet1.equals(packet2));
 	}
